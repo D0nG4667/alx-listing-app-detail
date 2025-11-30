@@ -9,10 +9,22 @@
 
 ---
 
-## 🚀 Live Deployment
+## 🚀 Milestone Preview: Responsive Property Detail Page
 
-- Hosted on Vercel: [https://alxlisting-00.gabcares.xyz](https://alxlisting-00.gabcares.xyz)
+As part of **Milestone 1**, the Property Detail Page has been implemented with Tailwind CSS and dynamic components.  
+This page demonstrates the integration of **PropertyDetail**, **BookingSection**, and **ReviewSection** into a responsive layout.
 
+🔗 **Live Preview:** [Villa Arrecife Beach House](https://alx-listing-app-01.gabcares.xyz/property/villa-arrecife-beach-house)
+
+### ✨ Features
+
+- Responsive grid layout with Tailwind CSS
+- Property name, rating, and location display
+- Image gallery with main and supporting images
+- Tabbed sections: Description, What we offer, Reviews, About host
+- Amenities list with icons and labels
+- Booking section with nightly price, date pickers, and total cost calculation
+- Review section with avatars, star ratings, and comments
 
 
 ---
