@@ -1,4 +1,4 @@
-import { PropertyProps } from "@/interfaces";
+import { ActivityType, PropertyProps, Review, SegmentType } from "@/interfaces";
 
 export const API_BASE_URL = 'http://localhost:9000/v1';
 
@@ -9,8 +9,92 @@ export const UI_TEXT = {
   VIEW_DETAILS: 'View Details',
 };
 
+export const MAX_DESC_LENGTH = 300; // characters before truncation
+
+export const WEEKLY_DISCOUNT = -88;
+export const SERVICE_FEE = 433;
+
+export const TEST_REVIEWS: Review[] = [
+  {
+    name: "Kerry",
+    avatar: "/assets/detail-images/image25.png",
+    rating: 4.60,
+    comment: "I simply don’t have the words to describe how incredibly beautiful the villa and its surroundings are. This is a wonderful remote spot that is simply breathtaking",
+    date: "March 2024",
+    activity: ActivityType.FamilyTrip,
+    memberSince: "3",
+  },
+  {
+    name: "Pooja",
+     avatar: "/assets/detail-images/image25-2.png",
+    rating: 4.85,
+    comment: "We stayed at this home for a family vacation of 7 adults (including 3 couples, 1 baby) and had a fantastic stay. The house was BEAUTIFUL and honestly better than shown in pictures,",
+    date: "March 2024",
+    activity: ActivityType.FamilyTrip,
+    memberSince: "1",
+  },
+  {
+    name: "Cindy & Ben",
+     avatar: "/assets/detail-images/image25-1.png",
+    rating: 4.70,
+    comment: "I simply don’t have the words to describe how incredibly beautiful the villa and its surroundings are. This is a wonderful remote spot that is simply breathtaking",
+    date: "August 2023",
+    activity: ActivityType.FamilyTrip,
+    memberSince: "1",
+  },
+  {
+    name: "Marnie",
+     avatar: "/assets/detail-images/image25-3.png",
+    rating: 4.89,
+    comment: "We stayed at this home for a family vacation of 7 adults (including 3 couples, 1 baby) and had a fantastic stay. The house was BEAUTIFUL and honestly better than shown in pictures,",
+    date: "January 2023",
+    activity: ActivityType.FamilyTrip,
+    memberSince: "5",
+  },
+];
+
 export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
-    {
+  {
+    name: "Villa Arrecife Beach House",
+    address: {
+      state: "Sidemen",
+      city: "Bali",
+      country: "Indonesia"
+    },
+    rating: 4.76,
+    category: ["Mountain view", "Shared beach access", "Chef", "Butler", "Cleaning/broom available", "Bartender", "Pool - infinity",  "Hot tub", "Kitchen/pan", "Wifi"],
+    price: 2500,
+    offers: {
+      bed: "4",
+      shower: "2",
+      occupants: "2-4"
+    },
+    image: "/assets/detail-images/image19.png",
+    images: [
+      "/assets/detail-images/image21.png",
+      "/assets/detail-images/image22.png",
+      "/assets/detail-images/image24.png",
+    ],
+    discount: "",
+    reviews: TEST_REVIEWS,
+    marketSegment: {
+      id: "seg-001",
+      name: "Mainstream",
+      description: `
+Aimed at the general population, offering affordable and comfortable properties that cater to everyday needs.`,
+      averagePriceRange: [500, 2500],
+      targetAudience: "General population seeking affordable and comfortable accommodations.",
+      type: SegmentType.Mainstream,
+    },    
+    description: `
+Feel like exploring the Dominican? Start the day with a hike on one of Playa Moron's many trails. Weave your way around the gated community to find secluded sandy coves for swimming and paddleboarding. When you're ready to chill with friends, the beach house pool awaits. Spend the night entertaining in the outdoor lounge, sipping drinks in the hot tub, and gazing out over incredible ocean views.
+
+The space
+BEDROOM & BATHROOM
+- Bedroom 1 - Primary: King size bed, Ensuite bathroom with stand-alone rain shower, Dual vanity, Walk-in closet, Television, Sofa, Deck, Balcony, Ocean view
+`,
+  },
+  {
     name: "Villa Ocean Breeze",
     address: {
       state: "Seminyak",
@@ -26,7 +110,8 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
       occupants: "4-6"
     },
     image: "/assets/listing-images/list1.png",
-    discount: ""
+    discount: "",
+    reviews: [],
   },
   {
     name: "Mountain Escape Chalet",
@@ -44,7 +129,8 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
       occupants: "5-7"
     },
     image: "/assets/listing-images/list2.png",
-    discount: "30"
+    discount: "30",
+    reviews: [],
   },
   {
     name: "Cozy Desert Retreat",
@@ -62,7 +148,8 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
       occupants: "2-3"
     },
     image: "/assets/listing-images/list3.png",
-    discount: ""
+    discount: "",
+    reviews: [],
   },
   {
     name: "City Lights Penthouse",
@@ -80,7 +167,8 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
       occupants: "2-4"
     },
     image: "/assets/listing-images/list4.png",
-    discount: "15"
+    discount: "15",
+    reviews: []
   },
   {
     name: "Riverside Cabin",
@@ -98,7 +186,8 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
       occupants: "4-6"
     },
     image: "/assets/listing-images/list5.png",
-    discount: "20"
+    discount: "20",
+    reviews: []
   },
   {
     name: "Modern Beachfront Villa",
@@ -116,7 +205,8 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
       occupants: "8-10"
     },
     image: "/assets/listing-images/list6.png",
-    discount: ""
+    discount: "",
+    reviews: []
   },
   {
     name: "Lakeside Chalet",
@@ -134,7 +224,8 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
       occupants: "4-5"
     },
     image: "/assets/listing-images/list7.png",
-    discount: "10"
+    discount: "10",
+    reviews: []
   },
   {
     name: "Tropical Garden Villa",
@@ -152,7 +243,8 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
       occupants: "5-6"
     },
     image: "/assets/listing-images/list8.png",
-    discount: "25"
+    discount: "25",
+    reviews: []
   },
   {
     name: "Urban Loft",
@@ -170,7 +262,8 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
       occupants: "2-3"
     },
     image: "/assets/listing-images/list9.png",
-    discount: ""
+    discount: "",
+    reviews: []
   },
   {
     name: "Secluded Forest Cabin",
@@ -188,7 +281,8 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
       occupants: "5-7"
     },
     image: "/assets/listing-images/list10.png",
-    discount: "40"
+    discount: "40",
+    reviews: []
   },
   {
     name: "Cliffside Villa",
@@ -206,7 +300,8 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
       occupants: "6-8"
     },
     image: "/assets/listing-images/list11.png",
-    discount: "50"
+    discount: "50",
+    reviews: []
   },
   {
     name: "Coastal Escape Villa",
@@ -224,7 +319,8 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
       occupants: "4-6"
     },
     image: "/assets/listing-images/list12.png",
-    discount: ""
+    discount: "",
+    reviews: []
   },
   {
     name: "Historical Villa",
@@ -242,7 +338,8 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
       occupants: "2-4"
     },
     image: "/assets/listing-images/list13.png",
-    discount: "35"
+    discount: "35",
+    reviews: []
   },
   {
     name: "Downtown Apartment",
@@ -260,7 +357,8 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
       occupants: "2"
     },
     image: "/assets/listing-images/list14.png",
-    discount: ""
+    discount: "",
+    reviews: []
   },
   {
     name: "Luxury Safari Lodge",
@@ -278,7 +376,8 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
       occupants: "6-8"
     },
     image: "/assets/listing-images/list15.png",
-    discount: "20"
+    discount: "20",
+    reviews: []
   },
   {
     name: "Countryside Cottage",
@@ -296,7 +395,8 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
       occupants: "2-4"
     },
     image: "/assets/listing-images/list16.png",
-    discount: "25"
+    discount: "25",
+    reviews: []
   },
   {
     name: "Riverfront Mansion",
@@ -314,7 +414,8 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
       occupants: "6-8"
     },
     image: "/assets/listing-images/list17.png",
-    discount: "30"
+    discount: "30",
+    reviews: []
   },
   {
     name: "Ski Chalet",
@@ -332,7 +433,8 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
       occupants: "4-5"
     },
     image: "/assets/listing-images/list18.png",
-    discount: ""
+    discount: "",
+    reviews: []
   },
   {
     name: "Island Paradise Villa",
@@ -350,7 +452,8 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
       occupants: "8-10"
     },
     image: "/assets/listing-images/list19.png",
-    discount: "60"
+    discount: "60",
+    reviews: []
   },
   {
     name: "Clifftop Retreat",
@@ -368,6 +471,7 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
       occupants: "4-5"
     },
     image: "/assets/listing-images/list20.png",
-    discount: ""
+    discount: "",
+    reviews: []
   }
 ];

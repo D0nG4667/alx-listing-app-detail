@@ -1,10 +1,11 @@
 import CardGrid from '@/components/common/CardGrid';
 import { PROPERTYLISTINGSAMPLE } from '@/constants';
 import FilterSection from '@/components/layout/sections/FilterSection';
-import type { PropertyProps } from '@/interfaces';
-import { useState, useMemo } from 'react';
+import type { NextPageWithLayout, PropertyProps } from '@/interfaces';
+import { useState, useMemo, ReactElement } from 'react';
+import HomeLayout from '@/components/layout/HomeLayout';
 
-export default function Home() {
+const HomePage: NextPageWithLayout = () => {
   const [activeFilter, setActiveFilter] = useState<string>('All');
   const [sortBy, setSortBy] = useState<string>('Highest Price');
 
@@ -49,3 +50,10 @@ export default function Home() {
     </div>
   );
 }
+
+
+HomePage.getLayout = function getLayout(page: ReactElement) {
+  return <HomeLayout>{page}</HomeLayout>;
+};
+
+export default HomePage;

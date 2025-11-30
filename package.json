@@ -1,6 +1,6 @@
 {
   "name": "alx-listing-app",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -16,10 +16,12 @@
   "dependencies": {
     "@headlessui/react": "^2.2.9",
     "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
     "fs-extra": "^11.3.2",
     "next": "16.0.1",
     "postcss": "^8.5.6",
     "react": "19.2.0",
+    "react-datepicker": "^8.10.0",
     "react-dom": "19.2.0",
     "tailwind-merge": "^3.4.0",
     "tailwindcss-animate": "^1.0.7"
@@ -32,6 +34,7 @@
     "@types/react-dom": "^19",
     "@types/svg-sprite": "^0.0.39",
     "autoprefixer": "^10.4.22",
+    "baseline-browser-mapping": "^2.8.32",
     "chokidar": "^4.0.3",
     "concurrently": "^9.2.1",
     "eslint": "^9",
