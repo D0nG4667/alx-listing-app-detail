@@ -89,7 +89,7 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({ property }) => 
       <div className="mb-3 flex w-full sm:w-[50%] text-sm">
         <DetailPill className="flex-1 text-center mr-3" iconName={IconName.Bed1} label={`${offers.bed} Bedrooms`} />
         <DetailPill className="flex-1 text-center mr-3" iconName={IconName.Bathtub1} label={`${offers.shower} Bathroom`} />
-        <DetailPill className="flex-1 text-center mr-3" iconName={IconName.People1} label={`${offers.occupants} Guests`} />
+        <DetailPill className="flex-1 text-center" iconName={IconName.People1} label={`${offers.occupants} Guests`} />
       </div>
 
     </>
