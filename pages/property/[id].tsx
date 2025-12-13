@@ -20,7 +20,7 @@ const PropertyPage: NextPageWithLayout = () => {
     <div className="bg-primary min-h-screen p-8">
       {/* Responsive grid layout */}
       {/* Outer container */}
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto">
         {/* Property detail grid */}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {/* Left side: images + tabs */}

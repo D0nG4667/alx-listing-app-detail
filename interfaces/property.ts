@@ -124,6 +124,8 @@ export interface PillProps {
 export interface DetailPillProps {
   iconName: IconName;
   label: string;
+  className?: string;        // ✅ for the pill container
+  labelClassName?: string;   // ✅ new prop for the label span
 }
 
 export interface FilterMenuProps {

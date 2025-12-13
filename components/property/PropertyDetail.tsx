@@ -9,11 +9,13 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({ property }) => 
 
   const { name, address, rating, offers, image, reviews, images, marketSegment } = property;
 
+  const labelClassName = "hidden sm:inline"
+
   return (
     <>
       <h1 className="text-4xl font-bold">{name}</h1>
       <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 text-sm sm:text-base">
           {rating && (
             <div className="text-md flex items-center">
               <Icon name={IconName.Star2} size={20} className="text-warning mr-1" /> {rating}
@@ -31,8 +33,8 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({ property }) => 
           <span className="text-gray-500">{marketSegment?.name}</span>
         </div>
         <div className="flex items-center space-x-2">
-          <DetailPill iconName={IconName.Fav} label="Save" />
-          <DetailPill iconName={IconName.Share} label="Share" />
+          <DetailPill iconName={IconName.Fav} label="Save" labelClassName={labelClassName} />
+          <DetailPill iconName={IconName.Share} label="Share" labelClassName={labelClassName} />
         </div>
       </div>
 
@@ -84,15 +86,12 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({ property }) => 
       </div>
 
       {/* Property details */}
-      <div className="mb-3 flex w-full flex-wrap text-sm">
-        {offers.bed && <DetailPill iconName={IconName.Bed1} label={`${offers.bed} Bedrooms`} />}
-        {offers.shower && (
-          <DetailPill iconName={IconName.Bathtub1} label={`${offers.shower} Bathroom`} />
-        )}
-        {offers.occupants && (
-          <DetailPill iconName={IconName.People1} label={`${offers.occupants} Guests`} />
-        )}
+      <div className="mb-3 flex w-full sm:w-[50%] text-sm">
+        <DetailPill className="flex-1 text-center mr-3" iconName={IconName.Bed1} label={`${offers.bed} Bedrooms`} />
+        <DetailPill className="flex-1 text-center mr-3" iconName={IconName.Bathtub1} label={`${offers.shower} Bathroom`} />
+        <DetailPill className="flex-1 text-center mr-3" iconName={IconName.People1} label={`${offers.occupants} Guests`} />
       </div>
+
     </>
   );
 };

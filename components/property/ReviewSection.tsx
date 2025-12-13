@@ -22,8 +22,8 @@ const ReviewSection: React.FC<{ reviews: Review[] }> = ({ reviews }) => {
         <Icon name={IconName.Star2} size={20} className="text-warning mr-1" />
         {reviews.length > 0
           ? (
-              reviews.reduce((acc, review) => acc + (review.rating || 0), 0) / reviews.length
-            ).toFixed(2)
+            reviews.reduce((acc, review) => acc + (review.rating || 0), 0) / reviews.length
+          ).toFixed(2)
           : '0.00'}
         <span className="ml-2 text-gray-500">({reviews.length} reviews)</span>
       </div>
@@ -69,11 +69,10 @@ const ReviewSection: React.FC<{ reviews: Review[] }> = ({ reviews }) => {
           type="button"
           onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
           disabled={currentPage === 1}
-          className={`rounded-md px-3 py-1 ${
-            currentPage === 1
-              ? 'cursor-not-allowed bg-gray-300 text-gray-500'
-              : 'bg-green-500 text-white'
-          }`}
+          className={`rounded-md px-3 py-1 ${currentPage === 1
+            ? 'cursor-not-allowed bg-gray-300 text-gray-500'
+            : 'bg-accent text-white'
+            }`}
         >
           Previous
         </button>
@@ -86,11 +85,10 @@ const ReviewSection: React.FC<{ reviews: Review[] }> = ({ reviews }) => {
           type="button"
           onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
           disabled={currentPage === totalPages}
-          className={`rounded-md px-3 py-1 ${
-            currentPage === totalPages
-              ? 'cursor-not-allowed bg-gray-300 text-gray-500'
-              : 'bg-green-500 text-white'
-          }`}
+          className={`rounded-md px-3 py-1 ${currentPage === totalPages
+            ? 'cursor-not-allowed bg-gray-300 text-gray-500'
+            : 'bg-accent text-white'
+            }`}
         >
           Next
         </button>
